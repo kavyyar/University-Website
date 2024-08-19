@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ADMISSION 2024</title>
+<style>
+    
+body {
+  background-image: url('bg5.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-size: 100% 100%;
+} 
+    label {
+        display: block;
+        margin-top: 10px;
+    }
+    
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-image: url('bg5.jpg');
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+    }
+
+    h2 {
+        text-align: center;
+        margin-top: 20px;
+        color: #fff;
+    }
+
+    #registrationForm {
+        max-width: 500px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: rgba(255, 255, 255, 0.8);
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    }
+
+    label {
+        display: block;
+        margin-top: 10px;
+        color: #467599;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    textarea,
+    select {
+        width: 100%;
+        padding: 10px;
+        margin-top: 5px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-sizing: border-box;
+    }
+
+    input[type="radio"],
+    input[type="checkbox"] {
+        display: inline-block;
+        margin-top: 5px;
+    }
+
+    button[type="submit"] {
+        width: 100%;
+        padding: 10px;
+        margin-top: 20px;
+        border: none;
+        border-radius: 5px;
+        background-color: #073668; /* Button color */
+        color: white;
+        cursor: pointer;
+    }
+
+    button[type="submit"]:hover {
+        background-color: #073668; /* Button color */
+    }
+
+    small {
+        display: block;
+        margin-top: 5px;
+        color: #666;
+    }
+    h1{
+        color: #073668;
+    }
+ </style>
+</head>
+<body>
+
+<center><h1>ADMISSION 2024</h1></center>
+
+<form id="registrationForm">
+    <div>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+    </div>
+    <div>
+        <label for="fatherName">Father's Name:</label>
+        <input type="text" id="fatherName" name="fatherName" required>
+    </div>
+    <div>
+        <label for="motherName">Mother's Name:</label>
+        <input type="text" id="motherName" name="motherName" required>
+    </div>
+    <div>
+        <label for="dob">Date of Birth:</label>
+        <input type="date" id="dob" name="dob" required>
+    </div>
+    <div>
+        <label for="address">Address:</label>
+        <textarea id="address" name="address" rows="4" cols="50" required></textarea>
+    </div>
+    <div>
+        <label>Gender:</label>
+        <input type="radio" id="male" name="gender" value="male" required>
+        <label for="male">Male</label>
+        <input type="radio" id="female" name="gender" value="female" required>
+        <label for="female">Female</label>
+        <input type="radio" id="other" name="gender" value="other" required>
+        <label for="other">Other</label>
+    </div>
+    <div>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+    </div>
+    <div>
+        <label for="phone">Phone:</label>
+        <input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required>
+        <small>Format: 123-456-7890</small>
+    </div>
+     <div>
+        <label for=" Dept">Area Of Interest</label>
+        <select id="Department" name="Department" multiple required>
+            <option value="Information Technology">Information Technology &#x1F525;</option>
+            <option value="Computer Science And Engineering">Computer Science And Engineering</option>
+            <option value="Mechanical">Mechanical</option>
+            <option value="Civil">Civil</option>
+            <option value="Mechantronics">Mechantronics</option>
+            <option value="Electronics And Communication Engineering">Electronics And Communication Engineering</option>
+            <option value="Electrical And Electronic Engineering">Electrical And Electronic Engineering</option>
+
+        </select>
+    </div>
+    <div>
+        <label for="nationality">Nationality:</label>
+        <select id="nationality" name="nationality" required>
+            <option value="">Select Nationality</option>
+            <option value="Indian">Indian</option>
+            <option value="American">Foreigner</option>
+        </select>
+    </div>
+    <div>
+        <label for="state">State:</label>
+        <select id="state" name="state" required>
+            <option value="">Select State</option>
+            <option value="Tamilnadu">Tamilnadu</option>
+            <option value="Maharastra">Maharastra</option>
+            <option value="New delhi">New delhi</option>
+        </select>
+    </div>
+    <div>
+        <label for="city">City:</label>
+        <select id="city" name="city" required>
+            <option value="">Select City</option>
+            <option value="Chennai">Chennai</option>
+            <option value="Mumbai">Mumbai</option>
+            <option value="Agra">Agra</option>
+        </select>
+    </div>
+    <button type="submit">Register</button>
+</form>
+
+<script>
+    document.getElementById("registrationForm").addEventListener("submit", function(event) {
+        event.preventDefault();
+        var formData = new FormData(this);
+        var formValues = {};
+        formData.forEach(function(value, key){
+            formValues[key] = value;
+        });
+        displaySuccessPopup();
+        console.log(formValues);
+        
+    });
+    document.getElementById("registrationForm").addEventListener("submit", function(event) {
+        event.preventDefault();
+        var formData = new FormData(this);
+        var formValues = {};
+        var requiredFieldsFilled = true;
+
+        formData.forEach(function(value, key){
+            formValues[key] = value;
+            if (!value.trim()) {
+                requiredFieldsFilled = false;
+                document.getElementById(key).classList.add('error');
+            } else {
+                document.getElementById(key).classList.remove('error');
+            }
+        });
+
+        if (requiredFieldsFilled) {
+            displaySuccessPopup();
+            console.log(formValues);
+        } else {
+            alert("Please fill the above data.");
+        }
+    });
+
+    function displaySuccessPopup() {
+        var popup = window.open("", "Registration Successful", "width=400,height=200,top=50%,left=50%,transform: translate(-50%, -50%)");
+        popup.document.write("<h1>Registration Successful</h1>");
+        popup.document.write("<p>You have been registered in Kamaraj College Of Engineering And Technology as a new admission.</p>");
+    }
+</script>
+
+</body>
+</html>

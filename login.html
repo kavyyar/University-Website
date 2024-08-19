@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login Page</title>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+        background-color: #f3f3f3; /* Background color */
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .login-container {
+        text-align: center;
+        position: relative;
+        width: 400px; /* Increased width */
+        padding: 40px; /* Increased padding */
+        border-radius: 20px; /* Increased border-radius */
+        background-color: #fff; /* Background color */
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); /* Increased shadow effect */
+    }
+    
+    .login-image {
+        width: 400px; /* Adjusted width */
+        margin-bottom: 40px; /* Increased spacing */
+    }
+    
+    input[type="text"],
+    input[type="password"] {
+        width: 100%; /* Full width input fields */
+        padding: 12px; /* Increased padding */
+        margin-bottom: 20px; /* Increased spacing */
+        border: 1px solid #ccc; /* Border color */
+        border-radius: 5px; /* Border radius */
+        box-sizing: border-box;
+    }
+    
+    button {
+        width: 100%; /* Full width button */
+        padding: 15px; /* Increased padding */
+        font-size: 16px;
+        background-color: #073668; /* Button color */
+        color: white;
+        border: none;
+        border-radius: 5px; /* Button border radius */
+        cursor: pointer;
+    }
+    
+    button:hover {
+        background-color: #073668; /* Button hover color */
+    }
+</style>
+</head>
+<body>
+
+<div class="login-container">
+    <img class="login-image" src="k.jpg" alt="Login Image">
+    <form id="loginForm">
+        <input type="text" placeholder="Username" required><br>
+        <input type="password" placeholder="Password" required><br>
+        <button type="submit">Login</button>
+    </form>
+</div>
+
+<script>
+    document.getElementById("loginForm").addEventListener("submit", function(event) {
+        event.preventDefault();
+        // Redirect to next page
+        window.location.href = "homepage.html"; // Replace "nextpage.html" with the URL of your next page
+    });
+</script>
+
+</body>
+</html>
